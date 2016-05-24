@@ -1,0 +1,55 @@
+﻿    <Window x:Class="Pji_Spotify.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:Pji_Spotify"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_Connect_Click" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_play_Click" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_prev_Click" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_skip_Click" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_pause_Click" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_alea_Click" CanExecute="NewCommand_CanExecute" />
+        <CommandBinding Command="ApplicationCommands.New" Executed="btn_play_Url" CanExecute="NewCommand_CanExecute" />
+    </Window.CommandBindings>
+
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="68" Margin="178,10,0,0" VerticalAlignment="Top" Width="329">
+            <Image gif:ImageBehavior.RepeatBehavior="1000x" gif:ImageBehavior.AnimatedSource="musicreal.gif" Stretch="Fill" />
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" VerticalAlignment="Top" Width="163">
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Emotions"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="480" Margin="178,83,0,0" VerticalAlignment="Top" Width="329">
+            <StackPanel>
+                <Button Name="con" Command="ApplicationCommands.New" Content="Connexion"/>
+                <TextBox Name="playTextBox" Text="" />
+                <Button Name="playUrl" Command="ApplicationCommands.New" Click="btn_play_Url">PlayURL</Button>
+                <Button Name="play" Command="ApplicationCommands.New" Click="btn_play_Click">Play</Button>
+                <Button Name="pause" Command="ApplicationCommands.New" Click="btn_pause_Click">Pause</Button>
+                <Button Name="prev" Command="ApplicationCommands.New" Click="btn_prev_Click">Previous</Button>
+                <Button Name="skip" Command="ApplicationCommands.New" Click="btn_skip_Click">Skip</Button>
+                <Button Name="alea" Command="ApplicationCommands.New" Click="btn_alea_Click">Skip aleatoire</Button>
+                <TextBlock x:Name="tb" TextWrapping="Wrap" Text="Track info"/>
+                <Label x:Name="smallAlbumPicture" Content="" />
+                <TextBlock x:Name="tb1" TextWrapping="Wrap" Text="Titre"/>
+                <Label x:Name="titleLinkLabel" Content="" />
+                <TextBlock x:Name="tb2" TextWrapping="Wrap" Text="Artiste"/>
+                <Label x:Name="artistLinkLabel" Content="" />
+                <TextBlock x:Name="tb3" TextWrapping="Wrap" Text="Album"/>
+                <Label x:Name="albumLinkLabel" Content=""/>
+                <TextBlock x:Name="tb5" TextWrapping="Wrap" Text="Is playing"/>
+                <Label x:Name="isPlayingLabel" Content=""/>
+                <TextBlock x:Name="tb6" TextWrapping="Wrap" Text="Volume"/>
+                <Label x:Name="volumeLabel" Content=""/>
+                <TextBlock x:Name="tb4" TextWrapping="Wrap" Text="Temps"/>
+                <Label x:Name="timeLabel" Content=""/>
+                <ProgressBar Minimum="0" Maximum="100" Name="timeProgressBar"  Value="50"/>
+            </StackPanel>
+            </Border>
+    </Grid>
+</Window>
